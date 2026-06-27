@@ -22,21 +22,24 @@ function start() {
 
         bar.style.width = percent + "%";
 
-        text.innerHTML = messages[Math.floor(percent / 30)] || 
+        text.innerHTML = messages[Math.floor(percent / 30)] ||
         "Calcolo finale...";
 
         if(percent >= 100){
 
             clearInterval(interval);
 
-            document.getElementById("game").classList.add("hidden");
+            text.innerHTML = "🎉 COMPLIMENTI! SEI IL VINCITORE!";
 
             setTimeout(() => {
+
+                document.getElementById("game")
+                .classList.add("hidden");
 
                 document.getElementById("final")
                 .classList.remove("hidden");
 
-            },1000);
+            },3000);
 
         }
 
